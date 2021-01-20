@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Take A Break</title>
+
+		<!-- header styling for layout and bootstrap -->
+		<link rel="stylesheet" href="../css/bs.css" />
+		<style>
+			:root {
+				width: 384px;
+				padding-top: 20px;
+				overflow: hidden;
+			}
+
+			caption {
+				caption-side: top;
+				text-align: center;
+			}
+			hr {
+				background: #007bffbf;
+				height: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- form to enter data and show saved values -->
+			<form>
+				<div class="form-group">
+					<label for="wt">Enter duration of work:</label>
+					<input
+						type="text"
+						id="wt"
+						class="form-control form-control-sm"
+						placeholder="Note: Enter minutes."
+					/>
+					<small class="form-text text-muted"
+						>Default is <span id="defWT">1 hour</span>.</small
+					>
+				</div>
+				<div class="form-group">
+					<label for="bt">Enter duration of break:</label>
+					<input
+						class="form-control form-control-sm"
+						type="text"
+						id="bt"
+						placeholder="Note: Enter minutes."
+					/>
+					<small class="form-text text-muted"
+						>Default is <span id="defWT">15 minutes</span>.</small
+					>
+				</div>
+				<div class="row justify-content-around">
+					<button
+						type="button"
+						class="btn col-5 btn-sm btn-primary"
+						id="si"
+					>
+						Save info
+					</button>
+					<button
+						type="button"
+						class="btn col-5 btn-sm btn-primary"
+						id="sd"
+					>
+						Save as default
+					</button>
+				</div>
+			</form>
+			<hr />
+			<!-- Table to display data of your web activity. -->
+			<table class="table table-striped">
+				<caption align="top">
+					Web Activity
+				</caption>
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Website</th>
+						<th scope="col">Time Spent(s)</th>
+					</tr>
+				</thead>
+				<tbody id="trkDataDisp"></tbody>
+				<tfoot>
+					<tr>
+						<th scope="row">-</th>
+						<th scope="row">Total</th>
+						<th scope="row" id="trDataTotal">0</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
+		<script src="../js/jq.js"></script>
+		<script src="../js/bsb.js"></script>
+		<script src="../js/main.js"></script>
+	</body>
+</html>
